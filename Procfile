@@ -1,2 +1,2 @@
-web: gunicorn color-cone/app:app
-worker: python color-cone/worker.py --preload
+web: gunicorn app:app
+worker: python worker.py
