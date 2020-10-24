@@ -15,7 +15,7 @@ def fake_algorithm(img_json):
     img = cv2.imdecode(jpg_as_np, flags=1)
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
-    string = base64.b64encode(cv2.imencode('.png', img)[1]).decode()
+    string = base64.b64encode(cv2.imencode('.png', gray)[1]).decode()
     dict = {
         'img': string
     }
