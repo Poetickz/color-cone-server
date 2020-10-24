@@ -1,1 +1,1 @@
-web: gunicorn app:color-cone/app
+web: sh heroku.sh
