@@ -14,7 +14,6 @@ flask-migrate = "==2.5.2"
 flask-script = "*"
 opencv-python = "==4.3.0.38"
 numpy = "*"
-scikit-build = "*"
 
 [requires]
 python_version = "3.7"
