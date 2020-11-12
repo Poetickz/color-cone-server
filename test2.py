@@ -18,7 +18,7 @@ job_id = response.json()['job_id']
 print(job_id)
 
 
-time.sleep(2)
+time.sleep(4)
 
 response = requests.request("GET", f'{url}results/{job_id}', headers=headers)
 
