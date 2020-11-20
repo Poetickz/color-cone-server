@@ -79,8 +79,8 @@ def cutImg(originalImage):
 
 
 def processImage(img_obj, lvl, sens):
-    global level = lvl
-    global sens = sens
+    level = lvl
+    sensitive = sens
     arrImg = cutImg(img_obj)
     arrImg = multiprocess(arrImg)
     enchance_image = pasteImg(arrImg)
