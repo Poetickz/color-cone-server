@@ -17,6 +17,9 @@ numpy = "*"
 redis = "==3.4.1"
 rq = "==1.2.2"
 requests = "*"
+sklearn = "*"
+colormath = "*"
+joblib = "*"
 
 [requires]
 python_version = "3.7"

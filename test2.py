@@ -4,11 +4,11 @@ import base64
 import numpy as np
 import cv2
 import time
-url = "https://color-cone-server.herokuapp.com/"
+url = "https://localhost:5000/"
 fake_request = json.loads(open('image2.json', 'r').read())
 
 
-headers= {}
+headers = {}
 
 response = requests.request("POST", url, headers=headers, json=fake_request)
 
@@ -28,5 +28,5 @@ jpg_original = base64.b64decode(string)
 jpg_as_np = np.frombuffer(jpg_original, dtype=np.uint8)
 img = cv2.imdecode(jpg_as_np, flags=1)
 
-cv2.imshow( "Display window", img )
+cv2.imshow("Display window", img)
 cv2.waitKey(0)

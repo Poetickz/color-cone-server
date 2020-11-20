@@ -7,15 +7,15 @@ import time
 
 fake_request = json.loads(open('image2.json', 'r').read())
 
-url = 'https://color-cone-server.herokuapp.com/ '
+url = 'https://localhost:5000/'
 
-# string = fake_request['img']
-# jpg_original = base64.b64decode(string)
-# jpg_as_np = np.frombuffer(jpg_original, dtype=np.uint8)
-# img = cv2.imdecode(jpg_as_np, flags=1)
+string = fake_request['img']
+jpg_original = base64.b64decode(string)
+jpg_as_np = np.frombuffer(jpg_original, dtype=np.uint8)
+img = cv2.imdecode(jpg_as_np, flags=1)
 
-# cv2.imshow( "Display window", img )
-# cv2.waitKey(0)
+cv2.imshow("Display window", img)
+cv2.waitKey(0)
 
 response = requests.post(f'{url}', json=fake_request)
 
@@ -28,8 +28,9 @@ job_id = response.json()['job_id']
 
 time.sleep(3)
 
-response = requests.get(f'{url}/results/{job_id}')
-print(response.json())
+response = requests.get(
+    'https://color-cone-server.herokuapp.com/results/2eecf336-a76d-4cf9-bc6f-c05ffb1ed9e3')
+print(response)
 
 
 string = response.json()['img']
@@ -37,5 +38,5 @@ jpg_original = base64.b64decode(string)
 jpg_as_np = np.frombuffer(jpg_original, dtype=np.uint8)
 img = cv2.imdecode(jpg_as_np, flags=1)
 
-cv2.imshow( "Display window", img )
+cv2.imshow("Display window", img)
 cv2.waitKey(0)
