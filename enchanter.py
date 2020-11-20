@@ -23,7 +23,7 @@ def dictionary(image_obj):
 
     model = load('model-x7.pkl')
 
-    algorithm = ColorCone(model, 1.025, 0.5)
+    algorithm = ColorCone(model, level, sensitive)
     subimage = image_obj
     h, w, bpp = shape(subimage)
     for pixelY in range(h):
