@@ -4,7 +4,7 @@ import base64
 import numpy as np
 import cv2
 import time
-url = "https://localhost:5000/"
+url = 'https://localhost:5000/'
 fake_request = json.loads(open('image2.json', 'r').read())
 
 

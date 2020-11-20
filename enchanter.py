@@ -11,6 +11,10 @@ from ColorCone import ColorCone
 
 colors = {}
 
+level = 0
+
+sensitive = 0
+
 
 def dictionary(image_obj):
     """
@@ -74,7 +78,9 @@ def cutImg(originalImage):
     return [subimageTopLeft, subimageTopRigth, subimageBottomLeft, subimageBottomRigth]
 
 
-def processImage(img_obj):
+def processImage(img_obj, lvl, sens):
+    global level = lvl
+    global sens = sens
     arrImg = cutImg(img_obj)
     arrImg = multiprocess(arrImg)
     enchance_image = pasteImg(arrImg)
