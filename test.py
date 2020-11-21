@@ -7,7 +7,7 @@ import time
 
 fake_request = json.loads(open('image2.json', 'r').read())
 
-url = 'https://color-cone-server.herokuapp.com/'
+url = 'https://color-cone-server.herokuapp.com'
 
 # string = fake_request['img']
 # jpg_original = base64.b64decode(string)
@@ -15,20 +15,19 @@ url = 'https://color-cone-server.herokuapp.com/'
 # img = cv2.imdecode(jpg_as_np, flags=1)
 
 
-response = requests.post(f'{url}', json=fake_request)
+# response = requests.post(f'{url}', json=fake_request)
 
 
-# print("Status code: ", response.status_code)
-# print("Printing Entire Post Request")
-# print(response.json())
+# # print("Status code: ", response.status_code)
+# # print("Printing Entire Post Request")
+# # print(response.json())
 
-job_id = response.json()['job_id']
+# job_id = response.json()['job_id']
 
-time.sleep(3)
+# time.sleep(10)
 
 
-response = requests.get(
-    f'{url}/results/{job_id}')
+response = requests.get(f'{url}/results/a5d482bf-2685-44cd-bfc9-ea122c06ab3f')
 print(response.json())
 
 

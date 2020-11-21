@@ -4,7 +4,7 @@ import os
 import json
 import numpy as np
 
-from enchanter import processImage
+from enchanter import Enchanter
 
 
 def fake_algorithm(img_json):
@@ -22,7 +22,9 @@ def fake_algorithm(img_json):
     jpg_as_np = np.frombuffer(jpg_original, dtype=np.uint8)
     img = cv2.imdecode(jpg_as_np, flags=1)
 
-    gray = processImage(img, level, sensitive)
+    ench = Enchanter(level, sensitive)
+
+    gray = ench.processImage(img)
 
     string = base64.b64encode(cv2.imencode('.png', gray)[1]).decode()
     dict = {
