@@ -14,10 +14,10 @@ def fake_algorithm(img_json):
     level = 1.025
     sensitive = 0.5
     if '!level' in response:
-        level = response['level']
+        level = response['!level']
 
     if '!sensitive' in response:
-        sensitive = response['sensitive']
+        sensitive = response['!sensitive']
     jpg_original = base64.b64decode(string)
     jpg_as_np = np.frombuffer(jpg_original, dtype=np.uint8)
     img = cv2.imdecode(jpg_as_np, flags=1)
