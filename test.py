@@ -9,10 +9,10 @@ fake_request = json.loads(open('image2.json', 'r').read())
 
 url = 'https://color-cone-server.herokuapp.com'
 
-# string = fake_request['img']
-# jpg_original = base64.b64decode(string)
-# jpg_as_np = np.frombuffer(jpg_original, dtype=np.uint8)
-# img = cv2.imdecode(jpg_as_np, flags=1)
+# # string = fake_request['img']
+# # jpg_original = base64.b64decode(string)
+# # jpg_as_np = np.frombuffer(jpg_original, dtype=np.uint8)
+# # img = cv2.imdecode(jpg_as_np, flags=1)
 
 
 # response = requests.post(f'{url}', json=fake_request)
@@ -24,10 +24,9 @@ url = 'https://color-cone-server.herokuapp.com'
 
 # job_id = response.json()['job_id']
 
-# time.sleep(10)
+# print(job_id)
 
-
-response = requests.get(f'{url}/results/a5d482bf-2685-44cd-bfc9-ea122c06ab3f')
+response = requests.get(f'{url}/results/71036543-432e-4c16-a574-948d4956789f')
 print(response.json())
 
 
