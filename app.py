@@ -36,7 +36,7 @@ def postimage():
     if 'img' in request.json:
         try:
             job = q.enqueue_call(
-                func=recolorate_image, args=(request.json,), result_ttl=10000
+                func=recolorate_image, args=(request.json,), result_ttl=15
             )
             print(job.get_id())
             return jsonify(job_id= job.get_id())
